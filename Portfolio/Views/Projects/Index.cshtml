@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Portfolio.Models.Project>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>My Projects</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@*Replacing the MVC template HTML table with divs below*@
+
+@*  <table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Thumbnail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GitHubLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Feature)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.Thumbnail)" alt="@Html.DisplayFor(modelItem => item.ProjectName)" title="@Html.DisplayFor(modelItem => item.ProjectName)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectListing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a href="@Html.DisplayFor(modelItem => item.GitHubLink)" target="_blank">@Html.DisplayFor(modelItem => item.GitHubLink)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Feature)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ProjectID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID })
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+
+@*Replacing the tempate MVC HTML Table above with divs below*@
+
+
+<div class="row">
+
+    <div class="col-md-1 projectshead">
+        @Html.DisplayNameFor(model => model.Thumbnail)
+    </div>
+    <div class="col-md-2 projectshead">
+        @Html.DisplayNameFor(model => model.ProjectName)
+    </div>
+    <div class="col-md-3 projectshead">
+        @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="col-md-3 projectshead">
+        @Html.DisplayNameFor(model => model.GitHubLink)
+    </div>
+    <div class="col-md-1 projectshead">
+        @Html.DisplayNameFor(model => model.Feature)
+    </div>
+    <div class="col-md-2 projectshead">Modifications
+    </div>
+</div>
+
+@foreach (var item in Model)
+            {
+    <br>
+    <div class="row">
+        <div class="col-md-1 projectslist">
+            <img src="@Html.DisplayFor(modelItem => item.Thumbnail)" alt="@Html.DisplayFor(modelItem => item.ProjectName)" title="@Html.DisplayFor(modelItem => item.ProjectName)" />
+        </div>
+        <div class="col-md-2 projectslist">
+            @Html.DisplayFor(modelItem => item.ProjectListing)
+        </div>
+        <div class="col-md-3 projectslist">
+            @Html.DisplayFor(modelItem => item.Description)
+        </div>
+        <div class="col-md-3 projectslist">
+            <a href="@Html.DisplayFor(modelItem => item.GitHubLink)" target="_blank">@Html.DisplayFor(modelItem => item.GitHubLink)</a>
+        </div>
+        <div class="col-md-1 projectslist">
+            @Html.DisplayFor(modelItem => item.Feature)
+        </div>
+        <div class="col-md-2 projectslist">
+            @Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }) |
+
+            @*The Details Link is unnecessary as all of the Project Properties are already listed in the divs above.*@
+
+            @*@Html.ActionLink("Details", "Details", new { id=item.ProjectID }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID })
+        </div>
+    </div>
+    
+}
+
+

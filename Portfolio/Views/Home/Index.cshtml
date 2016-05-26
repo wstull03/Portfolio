@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron mainImage">
+    <h1>My Portfolio</h1>
+    <p class="lead">Checkout My Awesome Projects!</p>
+    <p><a class="btn btn-primary btn-lg btn-gray" href="@Url.Action("Index", "Projects")" target="_blank">Learn more &raquo;</a></p>
+</div>
+
+@*Replacing the template bootstrap jumbotron below with the modifications made above.*@
+
+@*<div class="jumbotron">
+        <h1>My Portfolio</h1>
+        <p class="lead">Checkout All Of My Awesome Projects!</p>
+        <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Projects")" target="_blank">Learn more &raquo;</a></p>
+    </div>*@
+
+<div class="row">
+    <div class="col-md-4">
+
+        @*Removing the ActionLink and replacing with text as the default button meets this need.*@
+
+        @*<h2>@Html.ActionLink("Projects", "Index", "Projects")</h2>*@
+        <h2>Projects</h2>
+        <p>A showcase of my best work.</p>
+        <p><a class="btn btn-default btn-blue" href="@Url.Action("Index", "Projects")" target="_blank">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>GitHub</h2>
+        <p>Checkout my GitHub repositories here.</p>
+        <p><a class="btn btn-default btn-blue" href="https://github.com/wstull03" target="_blank">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>LinkedIn</h2>
+        <p>My professional connections.</p>
+        <p><a class="btn btn-default btn-blue" href="https://www.linkedin.com/in/william-stull-87ba56117?authType=NAME_SEARCH&authToken=lKiM&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A489319007%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1463956829933%2Ctas%3AWilliam%20Stull" target="_blank">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+
+
